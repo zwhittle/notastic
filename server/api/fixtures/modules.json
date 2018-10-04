@@ -1,0 +1,106 @@
+[
+  {
+    "model": "api.wdmodule",
+    "pk": 1,
+    "fields": {
+      "name": "HCM Core",
+      "order": 1
+    }
+  },
+  {
+    "model": "api.wdmodule",
+    "pk": 2,
+    "fields": {
+      "name": "Absence",
+      "order": 2
+    }
+  },
+  {
+    "model": "api.wdmodule",
+    "pk": 3,
+    "fields": {
+      "name": "Time Tracking",
+      "order": 3
+    }
+  },
+  {
+    "model": "api.wdmodule",
+    "pk": 4,
+    "fields": {
+      "name": "Benefits",
+      "order": 4
+    }
+  },
+  {
+    "model": "api.wdmodule",
+    "pk": 5,
+    "fields": {
+      "name": "Compensation",
+      "order": 5
+    }
+  },
+  {
+    "model": "api.wdmodule",
+    "pk": 6,
+    "fields": {
+      "name": "US Payroll",
+      "order": 6
+    }
+  },
+  {
+    "model": "api.wdmodule",
+    "pk": 7,
+    "fields": {
+      "name": "UK Payroll",
+      "order": 8
+    }
+  },
+  {
+    "model": "api.wdmodule",
+    "pk": 8,
+    "fields": {
+      "name": "France Payroll",
+      "order": 9
+    }
+  },
+  {
+    "model": "api.wdmodule",
+    "pk": 9,
+    "fields": {
+      "name": "Canada Payroll",
+      "order": 7
+    }
+  },
+  {
+    "model": "api.wdmodule",
+    "pk": 10,
+    "fields": {
+      "name": "Advanced Compensation",
+      "order": 11
+    }
+  },
+  {
+    "model": "api.wdmodule",
+    "pk": 11,
+    "fields": {
+      "name": "Financials",
+      "order": 10
+    }
+  },
+  {
+    "model": "api.wdmodule",
+    "pk": 12,
+    "fields": {
+      "name": "Learning",
+      "order": 12
+    }
+  },
+  {
+    "model": "api.wdmodule",
+    "pk": 13,
+    "fields": {
+      "name": "Recruiting",
+      "order": 13
+    }
+  }
+]

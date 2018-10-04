@@ -1,0 +1,11 @@
+<div class="object-list">
+  {{#each model as |project|}}
+    {{#link-to "project" project.id class="object"}}
+      {{project.name}}
+    {{/link-to}}
+  {{/each}}
+</div>
+
+{{#link-to "create-project" class="btn btn-addObject"}}
+  Add Project
+{{/link-to}}

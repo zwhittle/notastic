@@ -1,0 +1,38 @@
+<form class="form">
+  <div class="header">
+    Add a new note
+  </div>
+
+  {{input
+    value=form.client
+    name="client"
+    placeholder="Client"
+    autocomplete="Off"
+  }}
+
+  {{input
+    value=form.project
+    name="project"
+    placeholder="Project"
+    autocomplete="Off"
+  }}
+
+  {{textarea
+    value=form.body
+    name="body"
+    placeholder="Body goes here"
+    rows=10
+  }}
+
+</form>
+
+<div class="actions">
+  <div>
+    <button {{action "create"}}>
+      Create
+    </button>
+    <button {{action "cancel"}}>
+      Cancel
+    </button>
+  </div>
+</div>

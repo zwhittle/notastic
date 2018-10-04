@@ -1,0 +1,114 @@
+[
+  {
+    "model": "api.projectphase",
+    "pk": 1,
+    "fields": {
+      "name": "Pre-Sale"
+    }
+  },
+  {
+    "model": "api.projectphase",
+    "pk": 2,
+    "fields": {
+      "name": "Architect/Design"
+    }
+  },
+  {
+    "model": "api.projectphase",
+    "pk": 3,
+    "fields": {
+      "name": "Prototype Build"
+    }
+  },
+  {
+    "model": "api.projectphase",
+    "pk": 4,
+    "fields": {
+      "name": "Align & Configure"
+    }
+  },
+  {
+    "model": "api.projectphase",
+    "pk": 5,
+    "fields": {
+      "name": "End-To-End Build"
+    }
+  },
+  {
+    "model": "api.projectphase",
+    "pk": 6,
+    "fields": {
+      "name": "End-To-End Testing"
+    }
+  },
+  {
+    "model": "api.projectphase",
+    "pk": 7,
+    "fields": {
+      "name": "Parallel Testing - Cycle I"
+    }
+  },
+  {
+    "model": "api.projectphase",
+    "pk": 8,
+    "fields": {
+      "name": "Parallel Testing - Cycle II"
+    }
+  },
+  {
+    "model": "api.projectphase",
+    "pk": 9,
+    "fields": {
+      "name": "Parallel Testing - Cycle III"
+    }
+  },
+  {
+    "model": "api.projectphase",
+    "pk": 10,
+    "fields": {
+      "name": "Gold Build"
+    }
+  },
+  {
+    "model": "api.projectphase",
+    "pk": 11,
+    "fields": {
+      "name": "Catch Up"
+    }
+  },
+  {
+    "model": "api.projectphase",
+    "pk": 12,
+    "fields": {
+      "name": "MTP"
+    }
+  },
+  {
+    "model": "api.projectphase",
+    "pk": 13,
+    "fields": {
+      "name": "1st Payroll"
+    }
+  },
+  {
+    "model": "api.projectphase",
+    "pk": 14,
+    "fields": {
+      "name": "2nd Payroll"
+    }
+  },
+  {
+    "model": "api.projectphase",
+    "pk": 15,
+    "fields": {
+      "name": "Post-Prod Support"
+    }
+  },
+  {
+    "model": "api.projectphase",
+    "pk": 16,
+    "fields": {
+      "name": "Managed Services"
+    }
+  }
+]

@@ -1,0 +1,14 @@
+2,4c2,4
+<   {{#each model as |client|}}
+<     {{#link-to "client" client.id class="object"}}
+<       {{client.name}}
+---
+>   {{#each model as |project|}}
+>     {{#link-to "project" project.id class="object"}}
+>       {{project.name}}
+9,10c9,10
+< {{#link-to "create-client" class="btn btn-addObject"}}
+<   Add Client
+---
+> {{#link-to "create-project" class="btn btn-addObject"}}
+>   Add Project

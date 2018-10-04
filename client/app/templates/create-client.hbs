@@ -1,0 +1,24 @@
+<form class="form">
+  <div class="header">
+    Add a new client
+  </div>
+
+  {{input
+    value=form.name
+    name="name"
+    placeholder="Name"
+    autocomplete="Off"
+  }}
+
+</form>
+
+<div class="actions">
+  <div>
+    <button {{action "create"}}>
+      Create
+    </button>
+    <button {{action "cancel"}}>
+      Cancel
+    </button>
+  </div>
+</div>

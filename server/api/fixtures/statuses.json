@@ -1,0 +1,35 @@
+[
+  {
+    "model": "api.status",
+    "pk": 1,
+    "fields": {
+      "name": "Green",
+      "color_code": "#32c832",
+      "red": 50,
+      "green": 200,
+      "blue": 50
+    }
+  },
+  {
+    "model": "api.status",
+    "pk": 2,
+    "fields": {
+      "name": "Red",
+      "color_code": "#ff0000",
+      "red": 255,
+      "green": 0,
+      "blue": 0
+    }
+  },
+  {
+    "model": "api.status",
+    "pk": 3,
+    "fields": {
+      "name": "Yellow",
+      "color_code": "#ffff00",
+      "red": 255,
+      "green": 255,
+      "blue": 0
+    }
+  }
+]

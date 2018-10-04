@@ -1,0 +1,11 @@
+<div class="object-list">
+  {{#each model as |client|}}
+    {{#link-to "client" client.id class="object"}}
+      {{client.name}}
+    {{/link-to}}
+  {{/each}}
+</div>
+
+{{#link-to "create-client" class="btn btn-addObject"}}
+  Add Client
+{{/link-to}}

@@ -1,0 +1,11 @@
+<div class="object-list">
+  {{#each model as |note|}}
+    {{#link-to "note" note.id class="object"}}
+      {{note.body}}
+    {{/link-to}}
+  {{/each}}
+</div>
+
+{{#link-to "create-note" class="btn btn-addObject"}}
+  Add Note
+{{/link-to}}

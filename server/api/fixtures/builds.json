@@ -1,0 +1,30 @@
+[
+  {
+    "model": "api.tenantbuild",
+    "pk": 1,
+    "fields": {
+      "name": "Foundation/Prototype"
+    }
+  },
+  {
+    "model": "api.tenantbuild",
+    "pk": 2,
+    "fields": {
+      "name": "End-To-End"
+    }
+  },
+  {
+    "model": "api.tenantbuild",
+    "pk": 3,
+    "fields": {
+      "name": "Payroll Parallel"
+    }
+  },
+  {
+    "model": "api.tenantbuild",
+    "pk": 4,
+    "fields": {
+      "name": "Gold"
+    }
+  }
+]
