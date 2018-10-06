@@ -6,6 +6,10 @@ from django.db import models
 class Methodology(models.Model):
     name = models.CharField(max_length=100)
 
+    class Meta:
+        verbose_name_plural = "methodologies"
+        ordering = ('name',)
+
     def __str__(self):
         return self.name
 
@@ -14,6 +18,7 @@ class WDModule(models.Model):
     order = models.IntegerField(default=1)
 
     class Meta:
+        verbose_name = "WD module"
         ordering = ('order','name',)
 
     def __str__(self):
@@ -23,6 +28,7 @@ class ProjectPhase(models.Model):
     name = models.CharField(max_length=255)
 
     class Meta:
+        verbose_name = "project phase"
         ordering = ('name',)
 
     def __str__(self):
@@ -35,6 +41,10 @@ class Status(models.Model):
     green = models.IntegerField(default=0)
     blue = models.IntegerField(default=0)
 
+    class Meta:
+        verbose_name_plural = "statuses"
+        ordering = ('name',)
+
     def __str__(self):
         return self.name
 
@@ -45,6 +55,7 @@ class TenantBuild(models.Model):
     name = models.CharField(max_length=100)
 
     class Meta:
+        verbose_name = 'tenant build'
         ordering = ('name',)
 
     def __str__(self):
@@ -54,6 +65,7 @@ class TestingCycle(models.Model):
     name = models.CharField(max_length=100)
 
     class Meta:
+        verbose_name = "testing cycle"
         ordering = ('name',)
 
     def __str__(self):
@@ -65,7 +77,6 @@ class Client(models.Model):
     owner = models.ForeignKey('auth.User', related_name='clients', on_delete=models.CASCADE)
 
     class Meta:
-        # ordering = ('created',)
         ordering = ('name',)
 
     def __str__(self):
@@ -74,7 +85,6 @@ class Client(models.Model):
 class Project(models.Model):
     name = models.CharField(max_length=255)
     client = models.ForeignKey('Client', related_name='projects', on_delete=models.CASCADE)
-    created = models.DateTimeField(auto_now_add=True, null=True, blank=True)
     owner = models.ForeignKey('auth.User', related_name='projects', null=True, blank=True, on_delete=models.CASCADE)
     status = models.ForeignKey('Status', related_name='projects', blank=True, null=True, on_delete=models.CASCADE)
     methodology = models.ForeignKey('Methodology', related_name='projects', on_delete=models.CASCADE)
@@ -87,6 +97,7 @@ class Project(models.Model):
     scope = models.ManyToManyField(WDModule)
     builds = models.ManyToManyField(TenantBuild, through='TenantBuildInfo')
     testing_cycles = models.ManyToManyField(TestingCycle, through='TestingCycleInfo')
+    created = models.DateTimeField(auto_now_add=True, null=True, blank=True)
 
     class Meta:
         # ordering = ('created',)
@@ -102,7 +113,9 @@ class TenantBuildInfo(models.Model):
     end_date = models.DateField(null=True, blank=True)
 
     class Meta:
-        ordering = ('start_date', 'end_date')
+        verbose_name = "build"
+        verbose_name_plural = "builds"
+        ordering = ('project', 'start_date', 'end_date')
 
     def __str__(self):
         return "{0} - {1}".format(self.project, self.build)
@@ -114,6 +127,8 @@ class PhaseInfo(models.Model):
     end_date = models.DateField(null=True, blank=True)
 
     class Meta:
+        verbose_name = "phase"
+        verbose_name_plural = "phases"
         ordering = ('project', 'start_date', 'end_date')
 
     def __str__(self):
@@ -126,6 +141,8 @@ class TestingCycleInfo(models.Model):
     end_date = models.DateField(null=True, blank=True)
 
     class Meta:
+        verbose_name = "project testing cycle"
+        verbose_name_plural = "project testing cycles"
         ordering = ('project', 'start_date', 'end_date')
 
     def __str__(self):
@@ -138,8 +155,7 @@ class Note(models.Model):
     owner =  models.ForeignKey('auth.User', related_name='notes', on_delete=models.CASCADE)
 
     class Meta:
-        # ordering = ('created',)
-        ordering = ('project',)
+        ordering = ('client', 'project',)
 
     def __str__(self):
         return self.body
