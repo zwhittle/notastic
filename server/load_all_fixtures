@@ -1,0 +1,6 @@
+load_all_fixtures:
+    ./manage.py loaddata api/fixtures/builds.json
+    ./manage.py loaddata api/fixtures/methodologies.json
+    ./manage.py loaddata api/fixtures/modules.json
+    ./manage.py loaddata api/fixtures/phases.json
+    ./manage.py loaddata api/fixtures/statuses.json

@@ -51,8 +51,6 @@ class TenantBuildSerializer(serializers.ModelSerializer):
         fields = (
             'id',
             'name',
-            'start_date',
-            'end_date'
         )
 
 class ProjectSerializer(serializers.ModelSerializer):
