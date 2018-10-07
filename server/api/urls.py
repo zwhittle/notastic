@@ -15,15 +15,6 @@ router.register(r'statuses', views.StatusViewSet)
 router.register(r'users', views.UserViewSet)
 router.register(r'tenantbuilds', views.TenantBuildViewSet)
 
-# urlpatterns = [
-#     url(r'^projects/?$', ProjectAPIView.as_view(), name='project-create'),
-#     url(r'^projects/(?P<id>\d+)/?', ProjectRudView.as_view(), name='project-rud'),
-#     url(r'^clients/?$', ClientAPIView.as_view(), name='client-create'),
-#     url(r'^clients/(?P<id>\d+)/?', ClientRudView.as_view(), name='client-rud'),
-#     url(r'^notes/?$', NoteAPIView.as_view(), name='note-create'),
-#     url(r'^notes/(?P<id>\d+)/?', NoteRudView.as_view(), name='note-rud'),
-# ]
-
 urlpatterns = [
     url(r'^', include(router.urls)),
 ]

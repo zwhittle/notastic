@@ -15,7 +15,10 @@ def api_root(request, format=None):
         'wd_modules': reverse('wdmodule-list', request=request, format=format),
         'project_phases': reverse('projectphase-list', request=request, format=format),
         'statuses': reverse('status-list', request=request, format=format),
+        'tenant_builds': reverse('tenantbuild-list', request=request, format=format),
+        'testing_cycles': reverse('testingcycle-list', request=request, format=format),
         'clients': reverse('client-list', request=request, format=format),
+        'projects': reverse('project-list', request=request, format=format),
         'notes': reverse('note-list', request=request, format=format)
     })
 
@@ -40,10 +43,6 @@ class TenantBuildViewSet(viewsets.ModelViewSet):
     serializer_class = TenantBuildSerializer
 
 class ClientViewSet(viewsets.ModelViewSet):
-    """
-    This viewset automatically provides 'list', 'create', 'retrieve', 'update', and
-    'destroy' actions
-    """
     queryset = Client.objects.all()
     serializer_class = ClientSerializer
 
@@ -58,59 +57,3 @@ class NoteViewSet(viewsets.ModelViewSet):
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
-
-# class ProjectAPIView(mixins.CreateModelMixin, generics.ListAPIView):
-#     resource_name = 'projects'
-#     serializer_class = ProjectSerializer
-#
-#     def get_queryset(self):
-#         return Project.objects.all()
-#
-#     def post(self, request, *args, **kwargs):
-#         return self.create(request, *args, **kwargs)
-
-# class ProjectRudView(generics.RetrieveUpdateDestroyAPIView):
-#     resource_name = 'projects'
-#     lookup_field = 'id'
-#     serializer_class = ProjectSerializer
-#
-#     def get_queryset(self):
-#         return Project.objects.all()
-#
-# class ClientAPIView(mixins.CreateModelMixin, generics.ListAPIView):
-#     resource_name = 'clients'
-#     serializer_class = ClientSerializer
-#
-#     def get_queryset(self):
-#         return Client.objects.all()
-#
-#     def post(self, request, *args, **kwargs):
-#         return self.create(request, *args, **kwargs)
-#
-# class ClientRudView(generics.RetrieveUpdateDestroyAPIView):
-#     resource_name = 'clients'
-#     lookup_field = 'id'
-#     serializer_class = ClientSerializer
-#
-#     def get_queryset(self):
-#         return Client.objects.all()
-#
-# class NoteAPIView(mixins.CreateModelMixin, generics.ListAPIView):
-#     resource_name = 'notes'
-#     serializer_class = NoteSerializer
-#
-#     def get_queryset(self):
-#         return Note.objects.all()
-#
-#     def post(self, request, *args, **kwargs):
-#         return self.create(request, *args, **kwargs)
-#
-# class NoteRudView(generics.RetrieveUpdateDestroyAPIView):
-#     resource_name = 'notes'
-#     serializer_class = NoteSerializer
-#
-#     def get_queryset(self):
-#         return Note.objects.all()
-#
-#     def post(self, request, *args, **kwargs):
-#         return self.create(request, *args, **kwargs)

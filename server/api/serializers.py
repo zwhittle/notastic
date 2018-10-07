@@ -46,11 +46,37 @@ class TenantBuildSerializer(serializers.ModelSerializer):
             'name',
         )
 
+class TenantBuildInfoSerializer(serializers.ModelSerializer):
+    id = serializers.ReadOnlyField(source='tenantbuild.id')
+    name = serializers.ReadOnlyField(source='tenantbuild.name')
+
+    class Meta:
+        model = TenantBuildInfo
+        fields = (
+            'id',
+            'name',
+            'start_date',
+            'end_date'
+        )
+
 class TestingCycleSerializer(serializers.ModelSerializer):
     class Meta:
         model = TestingCycle
         fields = (
             'name',
+        )
+
+class TestingCycleInfoSerializer(serializers.ModelSerializer):
+    id = serializers.ReadOnlyField(source='testingcycle.id')
+    name = serializers.ReadOnlyField(source='testingcycle.name')
+
+    class Meta:
+        model = TestingCycleInfo
+        fields = (
+            'id',
+            'name',
+            'start_date',
+            'end_date'
         )
 
 class NoteSerializer(serializers.ModelSerializer):
@@ -62,7 +88,6 @@ class NoteSerializer(serializers.ModelSerializer):
             'body',
         )
 
-
 class ProjectSerializer(serializers.ModelSerializer):
     """
     This needs to be addressed ASAP
@@ -70,12 +95,12 @@ class ProjectSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username', required=False)
     # client = serializers.ReadOnlyField(source='client.name')
     # status = StatusSerializer(required=False)
-    # phases = ProjectPhaseSerializer(many=True, required=False)
+    phases = ProjectPhaseSerializer(many=True, read_only=True)
     notes = NoteSerializer(many=True, required=False)
     # methodology = MethodologySerializer()
     # scope = WDModuleSerializer(many=True)
-    builds = TenantBuildSerializer(many=True)
-    testing_cycles = TestingCycleSerializer(many=True)
+    builds = TenantBuildInfoSerializer(source='tenantbuildinfo_set', many=True)
+    testing_cycles = TestingCycleInfoSerializer(source='testingcycleinfo_set', many=True)
 
     class Meta:
         model = Project
@@ -97,6 +122,7 @@ class ProjectSerializer(serializers.ModelSerializer):
             'notes',
             'owner'
         )
+        depth = 2 
 
     def create(self, validated_data):
 
@@ -119,6 +145,8 @@ class ProjectSerializer(serializers.ModelSerializer):
             Note.objects.create(project=project, **note_data)
 
         return project
+
+
 
 class ClientSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
